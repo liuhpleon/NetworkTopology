@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='network.css')}}">
+		<title>Network Graph Simulation</title>
+	</head>
+	<body align="center">
+		<div>
+			<div class='title' >choose a real network:</div>	
+			<div>
+				<input type="submit" value="t1" id= 't1'>
+			</div>
+			<div>
+				<input type="submit" value="t2" id= 't2'>
+			</div>
+			<div>
+				<input type="submit" value="t3" id= 't3'>
+			</div>
+		</div>
+		<div>
+			<div class='title'>generate network:</div>
+			please enter the node number:<br>
+			<input type="text" id="nodes">
+			<br>
+			<br>
+		</div>
+		<div>
+			generate a random regular network:
+			<div>
+				please enter the d.o.f:<br>
+				<input type="text" id="dof">
+			</div>
+			<input type="submit" value="submit" id='submit1'>
+		</div>
+		
+		<div>
+			generate a random ER network:
+			<div>
+				please enter the probability:<br>
+				<input type="text" id="p1">
+			</div>
+			<input type="submit" value="submit" id='submit2'>
+		</div>
+		<div>
+			generate a random WS network:
+			<div>
+				please enter the number of neighbors:<br>
+				<input type="text" id="neb">
+			</div>
+			<div>
+				please enter the probability:<br>
+				<input type="text" id="p2">
+			</div>
+			<input type="submit" value="submit" id='submit3'>
+		</div>
+		<div>
+			generate a random BA network:
+			<div>
+				please enter the edges added each time<br>
+				<input type="text" id="edges">
+			</div>
+			<input type="submit" value="submit" id='submit4'>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="{{url_for('static',filename='init.js')}}"></script>
+	</body>
+</html>
