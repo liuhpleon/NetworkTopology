@@ -63,11 +63,72 @@ def graph():
         elif network_type =="failure":
             G2 = gen.failure(info["size"], G)[0]
             info = gen.info(G2)
-        print info
         return jsonify(info)
     else:
         return render_template("graph.html")
 
+@app.route('/index',methods=['GET','POST'])
+def graph_3d():
+    gen = generate(1)
+    info = gen.info(G)
+    if request.method =="POST":
+        data = request.form
+        network_type =  data.get("type").__str__()
+        print data
+        print network_type
+        if network_type =="attack":
+            attack = gen.attack(info["top10"], G)
+            G1 = attack[0]
+            arr = attack[1]
+            info = gen.info(G1)
+            info["arr"] = arr 
+        elif network_type =="failure":
+            failure = gen.failure(info["size"], G)
+            G2 = failure[0]
+            arr = failure[1]
+            info = gen.info(G2)
+            info["arr"] = arr 
+        #print info
+        return jsonify(info)
+    else:
+        return render_template("index.html")
+    
+@app.route('/res',methods=['GET','POST'])
+def graph_res():
+    gen = generate(1)
+    info = gen.info(G)
+    if request.method =="POST":
+        data = request.form
+        network_type =  data.get("type").__str__()
+        print data
+        print network_type
+        if network_type =="attack":
+            attack = gen.attack(info["top10"], G)
+            G1 = attack[0]
+            arr = attack[1]
+            info = gen.info(G1)
+            info["arr"] = arr 
+        elif network_type =="failure":
+            failure = gen.failure(info["size"], G)
+            G2 = failure[0]
+            arr = failure[1]
+            info = gen.info(G2)
+            info["arr"] = arr 
+        #print info
+        return jsonify(info)
+    else:
+        return render_template("res.html")
+    
+@app.route('/api',methods=['GET','POST'])
+def api():
+    gen = generate(1)
+    info = gen.info(G)
+    if request.method =="POST":
+        return jsonify(info);
+    else:
+        return render_template("api.html")
+    
+    
 if __name__ == '__main__':
     app.debug = True
     app.run('0.0.0.0', port = 5000)

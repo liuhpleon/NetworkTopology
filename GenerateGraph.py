@@ -57,15 +57,20 @@ class generate():
     
     def attack(self,arr,G):
         G1 = G.copy()
+        array = []
         for a in arr:
             G1.remove_node(a[0])
-        return G1
+            array.append(a[0])
+        print array
+        return (G1,array)
     
     def failure(self,size,G):
         G1 = G.copy()
         arr = random.sample(range(0, size), 10)
         for a in arr:
             G1.remove_node(a)
+            
+        print arr
         return (G1,arr)
     
     def info(self,G):

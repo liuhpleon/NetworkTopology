@@ -5,18 +5,10 @@
 		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='network.css')}}">
 		<title>Network Graph Simulation</title>
 	</head>
-	<body align="center">
+	<body align="left">
 		<div>
-			<div class='title' >choose a real network:</div>	
-			<div>
-				<input type="submit" value="t1" id= 't1'>
-			</div>
-			<div>
-				<input type="submit" value="t2" id= 't2'>
-			</div>
-			<div>
-				<input type="submit" value="t3" id= 't3'>
-			</div>
+			<div class='title' >Upload a real network(CSV format):</div>	
+			<input type="file" name="somename" size="chars"> 
 		</div>
 		<div>
 			<div class='title'>generate network:</div>
@@ -31,7 +23,9 @@
 				please enter the d.o.f:<br>
 				<input type="text" id="dof">
 			</div>
-			<input type="submit" value="submit" id='submit1'>
+			<input type="submit" value="2D network" id='submit11'>
+			<input type="submit" value="3D network" id='submit12'>
+			<input type="submit" value="Non Vision network" id='submit13'>
 		</div>
 		
 		<div>
@@ -40,7 +34,9 @@
 				please enter the probability:<br>
 				<input type="text" id="p1">
 			</div>
-			<input type="submit" value="submit" id='submit2'>
+			<input type="submit" value="2D network" id='submit21'>
+			<input type="submit" value="3D network" id='submit22'>
+			<input type="submit" value="Non Vision network" id='submit23'>
 		</div>
 		<div>
 			generate a random WS network:
@@ -52,7 +48,9 @@
 				please enter the probability:<br>
 				<input type="text" id="p2">
 			</div>
-			<input type="submit" value="submit" id='submit3'>
+			<input type="submit" value="2D network" id='submit31'>
+			<input type="submit" value="3D network" id='submit32'>
+			<input type="submit" value="Non Vision network" id='submit33'>
 		</div>
 		<div>
 			generate a random BA network:
@@ -60,7 +58,9 @@
 				please enter the edges added each time<br>
 				<input type="text" id="edges">
 			</div>
-			<input type="submit" value="submit" id='submit4'>
+				<input type="submit" value="2D network" id='submit41'>
+				<input type="submit" value="3D network" id='submit42'>
+				<input type="submit" value="Non Vision network" id='submit43'>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="{{url_for('static',filename='init.js')}}"></script>

@@ -33,13 +33,16 @@ function receive(data){
 		var components = results.components;
 		var avg_sp = results.avg_sp;
 		var top10 = results.top10;
-		info.text("");
+		info.empty();
 		info.append("<div>the size of this graph is: "+size+"</div>");
 		info.append("<div>the graph is connected: "+connected+"</div>");
 		info.append("<div>the components of this graph is: "+components+"</div>");
 		info.append("<em>the top 10 max d.o.f of this graph is:</em>");
 		for(var i in top10){
 		    info.append("<em>"+top10[i][0]+"("+top10[i][1]+")  ");
+		}
+		if(avg_sp!=null){
+			avg_sp = avg_sp.toFixed(2);
 		}
 		info.append("<div>the average shortest path of this graph is: "+avg_sp+"</div>");
 		var num = result;
